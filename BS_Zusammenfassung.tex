@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper,landscape]{article}
+\documentclass[11pt,a4paper,landscape]{article}
 \usepackage[left=0.55cm,right=0.55cm,top=1.10cm,bottom=0.55cm,landscape,
 headsep=2mm]{geometry}
 
@@ -99,35 +99,38 @@ headsep=2mm]{geometry}
 		\cline{1-2}
 	\end{tabularx}
 	\paragraph{Aufgabe von Betriebssystemen} Anwender soll von Details der Rechnerhardware entlastet werden, Kapselung des Zugriffs auf die Betriebsmittel, Bereitstellung einer \textit{virtuellen Maschine} über der hardware
-	\paragraph{Betriebsmittel}Unterscheidung: \textit{entziebare, nicht emtziebare,} sowie \textit{exklusiv} oder \textit{shared}\\
+	\paragraph{Betriebsmittel} sind die Ressourcen eines Systems. Unterscheidung: \textit{entziebare, nicht emtziebare,} sowie \textit{exklusiv} oder \textit{shared}\\
 	\ccontent{
 	\begin{tabularx}{\columnwidth}{|l|X|}
 		\cline{1-2}
-		reale Betriebsmittel & Prozessoren, Speicher, Dateien, Geräte \\
+		reale Betriebsmittel & Prozessoren, Speicher (RAM, Cache, etc), Dateien, Geräte \\
 		\cline{1-2}
-		virtuelle Betriebsmittel & virtueller Speicher, Prozessoren, Koprozessoren \\
+		virtuelle Betriebsmittel & virtueller Speicher, virtuelle Prozessoren, virtuelle Koprozessoren \\
 		\cline{1-2}
 	\end{tabularx}}
-	\paragraph{Betriebssystemkategorien} Smart Card, Embedded, Server, Desktop, Echtzeit
+	\paragraph{Betriebssystemkategorien} Smart Card Betriebssysteme, Embedded Systems, Server-Betriebssysteme, Desktop/PC Betriebssysteme, Echtzeit Betriebssysteme
 	\paragraph{Von-Neumann-Architektur} Leitwerk (Control Unit) holt Maschinenbefehle in den Speicher und führt sie aus. Rechenwerk (Processing Unit) führt logische und arithmetische Operationen aus. Maschinenbefehle und Daten liegen im selben Speicher. Ein-/Ausgabe (Input/Output) ist die Verbindung externer Geräte. Leitwerk + Rechenwerk = CPU
 	
 	\paragraph{Harvard-Architektur} Maschinenbefehle und Daten liegen in getrennten Speichern. Sie werden über einen getrennten Bus mit der CPU verbunden. Effizient, da doppelt so viele Leitungen zur Verfügung stehen
 	\paragraph{Caches} Schnelle Pufferspeicher in unterschiedlichen Speicherebenen. Speichert: Daten bzw. Codeteile $\rightarrow$ Zugriffsoptimierung. Level-n-Caches: Je kleiner n ist, desto schneller der Cache
-	\paragraph{CPU-Register} CPU enthält einen Registersatz um Daten schnell zu laden, speichern und zu rechnen
-	\paragraph{Universalbetriebssysteme} Jede möglichen Anwendungen sind auf dem Betriebssystem ausführbar. Verfügt jedoch nicht über Realtime-Eigenschaften
-	\paragraph{Multicore-Prozessoren} Mikroprozessoren mit mehreren vollständigen CPUs. Viele Ressourcen sind repliziert
+	\paragraph{CPU-Register} Register sind Speicherbereiche innerhalb der CPU. Die CPU benutzt den Registersatz um Daten schnell zu laden, speichern und zu berechnen. Die Daten können Zahlenwerte, Instruktionen, etc sein
+	\paragraph{Statusregister - Program Status Word (PSW)} Das Statusregister enthält den aktuellen Modus in dem sich das Betriebssystem gerade befindent (Usermodus, Kernelmodus). Dadurch werden die Datenstrukturen des Kernels vor unerlaubtem Zugriff geschützt
+	\paragraph{Mehrzweck - oder Universalbetriebssysteme} Jede möglichen Anwendungen sind auf dem Betriebssystem ausführbar. Verfügt meist nicht über Realtime-Eigenschaften
+	\paragraph{Multicore-Prozessoren} Mikroprozessoren mit mehreren vollständigen CPUs die unabhängig voneinander arbeiten können. Viele ihrer Ressourcen sind repliziert
 	\paragraph{Hyperthreading-CPUs} mehrfähdige Singlecore-Prozessoren mit mehreren Programmzählern und Registersätzen sowie Interrupt-Controllern, die sich gegenüber dem Betriebssystem aber als Multicore-Prozessoren darstellen
-	\paragraph{Virtuelle Maschine} Konzept zur Abstraktion, zum Beispiel Dateien und Ordner anstatt Bits
+	\paragraph{Virtuelle Maschine} Konzept zur Abstraktion und Kapselung eines Rechnersystems mittels Software. Die virtuelle Maschine bildet die Rechnerarchitektur eines real in Hardware existierenden Rechners nach.
+	\paragraph{Schnittstelle} Die Schnittstelle ist der Teil eines Systems, welcher der Kommunikation dient. Sie sind logische Berührungspunkte in einem Softwaresystem, welche den Austausch von Kommandos und Daten zwischen Prozessen und Komponenten ermöglichen
 	\section{Betriebssystemarchitekturen und Betriebsarten}
 	\subsection{Zugriffsschutz in Betriebssystemen}
 	Betriebssystem von Anwendungen abgeschottet, nicht zulässig: Zugriff auf Hardware und Ressourcen durch Anwendungen und Beeinträchtigung einer Anwendung durch eine andere. Dedizierte, abgesicherte Schnittstellen nötig, wenn Anwendung Dienste des Betriebssystem benötigt
-	\paragraph{Benutzermodus} (Usermodus) kein Zugriff auf kernelspezifische Code- und Datenbereiche möglich
-	\paragraph{Kernelmodus} (privilegierter Modus) Programmteile des Betriebssystems werden ausgeführt, die einem gewissen Schutz unterliegen
+	\paragraph{Benutzermodus} (Usermodus) kein Zugriff auf kernelspezifische Code- und Datenbereiche möglich $\rightarrow$ Lesen der aktuellen Uhrzeit
+	\paragraph{Kernelmodus} (privilegierter Modus) Programmteile des Betriebssystems werden ausgeführt, die einem gewissen Schutz unterliegen $\rightarrow$ Sperren von Interrupts oder Ändern der aktuellen Uhrzeit
 	\paragraph{Realisierung der Modi} Darstellung/Einstellung der Modi über ein Steuer- und Kontrollregister des Prozessors. Maschinenbefehl, der einen kontrollierten Übergang vom Benutzermodus in den privilegierten Modus ermöglicht, damit ein Anwendungsprogramm eine Betriebssystemfunktion aufrufen kann
 	\subsection{Betriebssystemarchitekturen}
 	\subsubsection{Klassische Architekturen}
 	\paragraph{Monolithischer Betriebssystemkern} alle Module werden im privilegierten Modus ausgeführt. Zugriff auf den kompletten Kerneladressraum. Dienstverteiler, der die Systemaufrufe der Anwendungen entgegennimmt und an die einzelnen Kernelmodule weiterleitet
 	\paragraph{Schichtorientierter Kernel} Kernel ist flexibler und überschaubarer. Höhere Schichten nutzen die Module der darunter liegenden Schicht. Die unterste Schicht dient meist dem Zugriff auf die Hardware. Abhängigkeit von der Hardware ist in dieser Schicht gekapselt
+	\paragraph{Mikrokern} Ein Mikrokern ist ein Betriebssystemkern, der im Gegensatz zu einem Monolithischen Kernel nur Grundlegende Funktionen erfüllt, da andere Funktionen in Anwendungsprozesse (Serverprozesse), die im Benutzermodus laufen, ausgelagert werden. Der Kernel übernimmt die Abwicklung der Kommunikation zwischen Client - und Serverprozessen
 	\subsection{Klassische Großrechnerbetriebsarten}
 	\subsubsection{Multiprogramming, Multiprocessing und Multitasking}
 	\paragraph{Mutliprogramming} gleichzeitige Ausführung von Programmen in einem Betriebssystem - Mehrprogrammbetrieb erfordert nicht unbedingt Mehrprozessorsysteme - heute ist die Anzahl der nebenläufigen Prozesse höher als die Anzahl der CPUs
@@ -171,7 +174,7 @@ headsep=2mm]{geometry}
 	\subsubsection{Überblick}
 	\paragraph{Polling} Nachfrage vom Prozessor, um deren Kommunikationsbereitschaft festzustellen bzw. um anliegende Ereignisse oder Kommunikationswünsche der Ereignisquelle abzufragen. \textbf{Nachteil:} CPU muss immer arbeiten $\rightarrow$ Effizienz beeinträchtigt
 	\paragraph{Interrupt} Unterbrechung, die die CPU veranlasst, einen vordefinierten Code auszuführen. Der Code liegt außerhalb der CPU - Ereignisquellen melden sich - können durch Hardware oder Software verursacht werden
-	\paragraph{System Calls} auch: \textit{Traps} oder \textit{Faults}, siehe unten
+	\paragraph{System Call} ist ein Dienstaufruf an das Betriebssystem , bei dessen Ausführung in den Kernelmodus gewechselt wird. Siehe dazu auch $\rightarrow$ \textit{Traps} oder \textit{Faults}
 	\paragraph{Synchrone Interrupts} auch: \textit{Exceptions}, sie treten bei synchronen Ereignissen auf - treten immer, bei identischen Randbedingungen, bei der gleichen Programmstelle auf - vorhersehbar und wiederholbar - Prozessor alleine kann die Interrupts nicht lösen und muss an das Anwendungsprogramm oder Betriebssystem melden
 	\paragraph{Exceptions} von CPU für das laufende Programm ausgelöst. Beispiel: divide-by-zero-exception
 	\paragraph{Traps} erst nach der Ausführung vom Betriebssystem erkannt und an das Programm gemeldet
@@ -181,7 +184,7 @@ headsep=2mm]{geometry}
 	Interrupt-Bearbeitung wird die Steuerung an eine definierte Position im Kernel übergeben, dabei Wechsel in den Kernelmodus, sofern noch nicht geschehen
 	\paragraph{Maskierung} Ein- und Ausschalten von Interrupts bestimmter Geräte, kann über ein \textit{Interrupt-Maskenregister, IMR} erfolgen - Nutzung: Verhindern das ein Interrupt von einem anderen Interrupt unterbrochen wird
 	\paragraph{Non Maskable Interrupt (NMI)} Steuerung für maskierbare Interrupts. Wenn NMI eintritt entsteht eine Ausnahmesituation und somit eine Ausnahmebehandlung
-	\paragraph{Interrupt-Service-Routine (ISR)} Bearbeitung von Interrupts. Für jeden Interrupt-Typ gibt es einen passenden ISR
+	\paragraph{Interrupt-Service-Routine (ISR)} Ein Programmstück, das für die entsprechende Interruptbearbeitung zuständig ist. Sie wird aufgerufen wenn ein Gerät oder Software einen entsprechenden Interrupt auslöst. Für jeden Interrupt-Typ gibt es einen passenden ISR
 	\paragraph{Interrupt-Request-Bearbeitung (IRQ-Bearbeitung)} Hardwarebedingte Interrupts, die nicht direkt vom auslösenden Gerät an die CPU signalisiert werden, werden zuerst an einen \textit{Interrupt-Controller} gemeldet. Der Interrupt-Controller erzeugt dann eine Unterbrechung der CPU, mit Hilfe passender ISR
 	\paragraph{Interrupt-Vektor-Tabelle} ISRs werden über \textit{Interrupt-Vektoren} adressiert, welche sich in der Interrupt-Vektor-Tabelle befinden
 	\paragraph{Interrupt-Level} Prioritäten-Level, welcher dem Betriebssystem vorgibt, wie der Interrupt in die Gesamtverabeitung eingebaut werden soll
@@ -203,7 +206,9 @@ headsep=2mm]{geometry}
 	\paragraph{Dienste des Betriebssystems} Anwendungen nutzen die Dienste des Betriebssystems, die über sogenannte Systemcalls aufgerufen werden - Wohldefinierte Einstiegspunkte ins Betriebssystem - Systemcalls werden im Kernelmodus ausgeführt - beim Aufruf wird durch den Prozessor vom Usermodus in den Kernelmodus umgeschaltet
 	\section{Prozesse und Threads}
 	\subsection{Prozesse und Lebenszyklus von Prozessoren}
-	\paragraph{Prozess} Ausführung eines Programms auf einem Prozessor, dynamische Folge von Aktionen verbunden mit entsprechenden Zustandsänderungen, inklusive Daten und Registerinhalten und eigenem Adressraum
+	\paragraph{Programm} sind die Dateien und der Programmcode wie sie auf der Festplatte gespeichert sind
+	\paragraph{Prozess} Ausführung eines Programms auf einem Prozessor, dynamische Folge von Aktionen verbunden mit entsprechenden Zustandsänderungen, inklusive Daten und Registerinhalten und eigenem Adressraum. Ein Prozess kann folgende Zustände durchlaufen $\rightarrow$ Bereit, Aktiv, Blockiert, Stop, Zombie, Idle, Nicht existent
+	\paragraph{Zombie Prozess} ist ein Kindprozess der beendet wurde, aber dessen Elternprozess noch keine Nachricht über dessen "\textit{Ableben}" erhalten hat
 	\paragraph{Virtueller Prozessor} jedem Prozess im Multiprogramming wird ein virtueller Prozessor zugeordnet
 	\paragraph{Konkurrenz zwischen Prozessen} Prozesse konkurrieren um die Betriebsmittel, laufen abwechselnd einige Millisekunden, werden mit Mitteln des Betriebsystems erzeugt
 	\includegraphics[width=1\columnwidth]{prozesse}
@@ -212,7 +217,7 @@ headsep=2mm]{geometry}
 	(3) Prozess wird blockiert (z.B. Warten auf Input, Betriebsmittel angefordert)\\
 	(4) Blockierungsgrund aufgehoben (Betriebsmittel verfügbar)\\
 	(5) Prozessbeendigung oder Fataler Fehler (Terminieren des Prozesses)\\
-	\paragraph{Prozesstabelle und PCB} Eintrag in der Prozesstabelle wird als \textit{Process Control Block (PCB)} bezeichnet - wichtige Informationen im PCB: Programmzähler, Prozesszustand, Priorität, Prozess ID, etc.
+	\paragraph{Prozesstabelle und PCB} Eintrag in der Prozesstabelle wird als \textit{Process Control Block (PCB)} bezeichnet - wichtige Informationen im PCB: Programmzähler, Prozesszustand, Priorität, Prozess ID, zugeordnete Betriebsmittel, aktuelle Registerinhalte, verbrauchte Prozessorzeit seit Start des Prozesses
 	\subsubsection{C Fork()}
 	Ein \texttt{fork()} erzeugt einen Kindprozess, der in der nächsten Zeile des Programms beginnt.\\\\
 	\begin{allesInCode}
@@ -232,7 +237,7 @@ headsep=2mm]{geometry}
 		fork(); \\
 	\end{allesInCode}
 	\subsection{Threads}
-	sind leichtgewichtige Prozesse die eine \textit{nebenläufige Ausführungseinheit} innerhalb eines Prozesses darstellen. Alle Threads eines Prozesses teilen sich den gemeinsamen Adressraum dieses Prozesses. Threads haben eigenen Zustandsautomat sowie einen eigenen Programmzähler, einen eigenen Registersatz und einen eigenen Stack
+	sind leichtgewichtige Prozesse die eine \textit{nebenläufige Ausführungseinheit} innerhalb eines Prozesses darstellen. Alle Threads eines Prozesses teilen sich den gemeinsamen Adressraum dieses Prozesses. Threads haben eigenen Zustandsautomat sowie einen eigenen Programmzähler, einen eigenen Registersatz und einen eigenen Stack. Threads sind genau einem Prozess eindeutig zugeordnet
 	\paragraph{Implementierung auf Benutzerebene} Thread - Bibliothek übernimmt das Scheduling und Dispatching für Threads. Der Kernel merkt nicht von Threads
 	\paragraph{Implementierung auf Kernelebene} Prozess ist nur noch Verwaltungseinheit für Betriebsmittel. Scheduling-Einheit ist hier der Thread, nicht der Prozess
 	\paragraph{Gründe für Threads} Thread-Kontext-Wechsel gehen schneller als Prozess-Kontext-Wechsel, Parallelisierung der Prozessarbeit. Hört auf Netzwerkverbindungswünsche, führt Berechnungen durch, kümmert sich um das User-Interface
