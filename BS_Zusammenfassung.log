@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  4 JUL 2018 21:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  5 JUL 2018 15:25
 entering extended mode
 **./BS_Zusammenfassung.tex
 (BS_Zusammenfassung.tex
@@ -859,152 +859,355 @@ tan-forderun-gen
  []
 
 [3 <./prozesse.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 314--323
+Overfull \hbox (2.90263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 A| 
+ []
+
+
+Overfull \hbox (2.55263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 B| 
+ []
+
+
+Overfull \hbox (2.67464pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 C| 
+ []
+
+
+Overfull \hbox (3.02463pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 D| 
+ []
+
+
+Overfull \hbox (2.31613pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 E| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 8| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 27| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 1| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 5| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 10| 
+ []
+
+
+Overfull \hbox (2.90263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 A| 
+ []
+
+
+Overfull \hbox (2.55263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 B| 
+ []
+
+
+Overfull \hbox (2.67464pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 C| 
+ []
+
+
+Overfull \hbox (3.02463pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 D| 
+ []
+
+
+Overfull \hbox (2.31613pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 E| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 0| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 8| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 35| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 40| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 41| 
+ []
+
+
+Overfull \hbox (2.67464pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 C| 
+ []
+
+
+Overfull \hbox (3.02463pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 D| 
+ []
+
+
+Overfull \hbox (2.90263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 A| 
+ []
+
+
+Overfull \hbox (2.31613pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 E| 
+ []
+
+
+Overfull \hbox (2.55263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 B| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 0| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 1| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 6| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 14| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 24| 
+ []
+
+
+Overfull \hbox (2.90263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 A| 
+ []
+
+
+Overfull \hbox (2.55263pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 B| 
+ []
+
+
+Overfull \hbox (3.02463pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 D| 
+ []
+
+
+Overfull \hbox (2.67464pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 C| 
+ []
+
+
+Overfull \hbox (2.31613pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 E| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 18| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 24| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 17| 
+ []
+
+
+Overfull \hbox (0.78563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 6| 
+ []
+
+
+Overfull \hbox (5.03563pt too wide) in paragraph at lines 313--313
+[]|\T1/lmr/m/n/8 24| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--323
+Underfull \hbox (badness 10000) in paragraph at lines 343--352
 
  []
 
-<semaphor.png, id=21, 587.19376pt x 371.13657pt>
+[4]
+<semaphor.png, id=29, 587.19376pt x 371.13657pt>
 File: semaphor.png Graphic file (type png)
 <use semaphor.png>
-Package pdftex.def Info: semaphor.png  used on input line 324. on input line 32
-4.
+Package pdftex.def Info: semaphor.png  used on input line 353. on input line 35
+3.
 Package pdftex.def Info: Requested size: 238.12297pt x 150.50203pt on input lin
-e 324.
-<erzeuger-verbraucher.png, id=22, 575.14874pt x 360.59718pt>
+e 353.
+<erzeuger-verbraucher.png, id=30, 575.14874pt x 360.59718pt>
 File: erzeuger-verbraucher.png Graphic file (type png)
 <use erzeuger-verbraucher.png>
-Package pdftex.def Info: erzeuger-verbraucher.png  used on input line 329. on i
-nput line 329.
+Package pdftex.def Info: erzeuger-verbraucher.png  used on input line 358. on i
+nput line 358.
 Package pdftex.def Info: Requested size: 238.12297pt x 149.2929pt on input line
- 329.
-[4 <./semaphor.png>]
-<monitor.png, id=29, 398.23781pt x 599.99156pt>
+ 358.
+<monitor.png, id=31, 398.23781pt x 599.99156pt>
 File: monitor.png Graphic file (type png)
 <use monitor.png>
-Package pdftex.def Info: monitor.png  used on input line 333. on input line 333
+Package pdftex.def Info: monitor.png  used on input line 362. on input line 362
 .
 Package pdftex.def Info: Requested size: 171.97725pt x 259.0991pt on input line
- 333.
-<monitor_csharp.png, id=30, 448.67625pt x 164.86594pt>
+ 362.
+<monitor_csharp.png, id=32, 448.67625pt x 164.86594pt>
 File: monitor_csharp.png Graphic file (type png)
 <use monitor_csharp.png>
-Package pdftex.def Info: monitor_csharp.png  used on input line 341. on input l
-ine 341.
+Package pdftex.def Info: monitor_csharp.png  used on input line 370. on input l
+ine 370.
 Package pdftex.def Info: Requested size: 171.97725pt x 63.19307pt on input line
- 341.
-<zustand.png, id=31, 529.98pt x 282.30469pt>
+ 370.
+<zustand.png, id=33, 529.98pt x 282.30469pt>
 File: zustand.png Graphic file (type png)
 <use zustand.png>
-Package pdftex.def Info: zustand.png  used on input line 351. on input line 351
+Package pdftex.def Info: zustand.png  used on input line 381. on input line 381
 .
 Package pdftex.def Info: Requested size: 259.29008pt x 138.11511pt on input lin
-e 351.
-<banker.png, id=32, 526.21594pt x 191.9672pt>
+e 381.
+<banker.png, id=34, 526.21594pt x 191.9672pt>
 File: banker.png Graphic file (type png)
 <use banker.png>
-Package pdftex.def Info: banker.png  used on input line 353. on input line 353.
+Package pdftex.def Info: banker.png  used on input line 383. on input line 383.
 
 Package pdftex.def Info: Requested size: 238.12297pt x 86.87068pt on input line
- 353.
+ 383.
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--355
+Underfull \hbox (badness 10000) in paragraph at lines 382--385
 []
  []
 
-[5 <./erzeuger-verbraucher.png> <./monitor.png> <./monitor_csharp.png> <./zusta
-nd.png> <./banker.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+[5 <./semaphor.png> <./erzeuger-verbraucher.png> <./monitor.png> <./monitor_csh
+arp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 []  \T1/lmr/bx/n/8 Nachricht-en-basiert \T1/lmr/m/n/8 Zwis-chen Prozessen/Threa
 ds wer-den
  []
 
-<adressierung.png, id=36, 541.27219pt x 146.79843pt>
+<adressierung.png, id=38, 541.27219pt x 146.79843pt>
 File: adressierung.png Graphic file (type png)
 <use adressierung.png>
-Package pdftex.def Info: adressierung.png  used on input line 374. on input lin
-e 374.
+Package pdftex.def Info: adressierung.png  used on input line 404. on input lin
+e 404.
 Package pdftex.def Info: Requested size: 211.66711pt x 57.4057pt on input line 
-374.
-<pipe.png, id=37, 486.31688pt x 220.57407pt>
+404.
+<pipe.png, id=39, 486.31688pt x 220.57407pt>
 File: pipe.png Graphic file (type png)
 <use pipe.png>
-Package pdftex.def Info: pipe.png  used on input line 382. on input line 382.
+Package pdftex.def Info: pipe.png  used on input line 412. on input line 412.
 Package pdftex.def Info: Requested size: 171.97725pt x 77.99974pt on input line
- 382.
+ 412.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 []  \T1/lmr/bx/n/8 Zurückschreiben (write back) \T1/lmr/m/n/8 Schrei-b-op-er-a-
 tio-nen wirken
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--422
+[6 <./zustand.png> <./banker.png> <./adressierung.png> <./pipe.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
-[6 <./adressierung.png> <./pipe.png>]
-<link.png, id=41, 566.86781pt x 270.25969pt>
+[7]
+<link.png, id=47, 566.86781pt x 270.25969pt>
 File: link.png Graphic file (type png)
 <use link.png>
-Package pdftex.def Info: link.png  used on input line 470. on input line 470.
+Package pdftex.def Info: link.png  used on input line 501. on input line 501.
 Package pdftex.def Info: Requested size: 211.66711pt x 100.91412pt on input lin
-e 470.
+e 501.
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 503--505
 
  []
 
-<konsistenz.png, id=42, 587.19376pt x 264.23718pt>
+<konsistenz.png, id=48, 587.19376pt x 264.23718pt>
 File: konsistenz.png Graphic file (type png)
 <use konsistenz.png>
-Package pdftex.def Info: konsistenz.png  used on input line 481. on input line 
-481.
+Package pdftex.def Info: konsistenz.png  used on input line 512. on input line 
+512.
 Package pdftex.def Info: Requested size: 251.35292pt x 113.10771pt on input lin
-e 481.
-[7 <./link.png>]
-Underfull \hbox (badness 5203) in paragraph at lines 495--496
+e 512.
+
+Underfull \hbox (badness 5203) in paragraph at lines 526--527
 []  \T1/lmr/bx/n/8 Fest-plat-ten-spe-icher de-frag-men-tieren \T1/lmr/m/n/8 Fra
 g-men-tierung nimmt
  []
 
-[8 <./konsistenz.png>]
-<einausgabe.png, id=50, 596.2275pt x 267.24844pt>
+[8 <./link.png> <./konsistenz.png>]
+<einausgabe.png, id=52, 596.2275pt x 267.24844pt>
 File: einausgabe.png Graphic file (type png)
 <use einausgabe.png>
-Package pdftex.def Info: einausgabe.png  used on input line 534. on input line 
-534.
+Package pdftex.def Info: einausgabe.png  used on input line 565. on input line 
+565.
 Package pdftex.def Info: Requested size: 251.35292pt x 112.66359pt on input lin
-e 534.
- [9 <./einausgabe.png>] 
+e 565.
+ [9 <./einausgabe.png>] [10]
+
 AED: lastpage setting LastPage
 (BS_Zusammenfassung.aux) ) 
 Here is how much of TeX's memory you used:
  3682 strings out of 493312
  51180 string characters out of 3138899
- 131831 words of memory out of 3000000
+ 136833 words of memory out of 3000000
  7132 multiletter control sequences out of 15000+200000
  41853 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,43p,670b,1308s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,670b,1316s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm
-.enc}{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{D:/Program 
-Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/MiKTeX 2.9/font
-s/enc/dvips/lm/lm-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
-/lmbx10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx8.pfb><D:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmmi8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb>
-<D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><D:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmtt8.pfb>
-Output written on BS_Zusammenfassung.pdf (9 pages, 1368695 bytes).
+.enc}{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{D:/Program 
+Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{D:/Program Files/MiKTeX 2.9/
+fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm
+-mathsy.enc}<D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><D:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx8.pfb><D:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmex10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmmi6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.p
+fb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+ri8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><D:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on BS_Zusammenfassung.pdf (10 pages, 1393164 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

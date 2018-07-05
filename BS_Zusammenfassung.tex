@@ -283,10 +283,39 @@ headsep=2mm]{geometry}
 	\subsubsection{Dynamisches Scheduling}
 	zur Laufzeit wird entschieden, welche Task die höchste Priorität bekommt
 	\paragraph{Earliest-Deadline First (EDF)} Task mit der nächsten absoluten Deadline hat die höchste Priorität und die absolute Deadline ist abhängig vom Zeitpunkt- \textbf{Vorteil} ist hohe Prozessorauslastung, einfacher Schedulability Test. \textbf{Nachteil} ist, für den Scheduler entsteht ein erheblich größerer und im Aufwand schwankender Overhead als bei statischen Verfahren
+	\subsubsection{Beispiel Wartezeiten}
+	\begin{tabularx}{\columnwidth}{|l|X|X|X|X|X|c|c|}
+		\cline{1-8}
+		Job & A & B & C & D & E & $W_{all} = \sum \limits_{i=1}^n W_i$ & $W_{avg} = \frac{1}{n}W_{all}$ \\
+		\cline{1-8}
+		Ablaufzeit & 8 & 27 & 1 & 5 & 10 & & \\
+		\cline{1-8}
+		\multicolumn{8}{|l|}{FCFS} \\
+		\cline{1-8}
+		Job & A & B & C & D & E & & \\
+		\cline{1-8}
+		Wartezeit & 0 & 8 & 35 & 40 & 41 & 124 & 24,8\\
+		\cline{1-8}
+		\multicolumn{8}{|l|}{SJF} \\
+		\cline{1-8}
+		Job & C & D & A & E & B & &\\
+		\cline{1-8}
+		Wartezeit & 0 & 1 & 6 & 14 & 24 & 45 & 9\\
+		\cline{1-8}
+		\multicolumn{8}{|l|}{RR mit 2ms Zeitscheibe (Quantum)} \\
+		\cline{1-8}
+		Job & \multicolumn{7}{c|}{A-B-D-\textbf{C}-E-A-B-D-E-A-B-\textbf{D}-E-\textbf{A}-B-E-B-\textbf{E}-B-...-\textbf{B}} \\
+		\cline{1-8}
+		Job & A & B & D & C & E & $W_{all} = \sum \limits_{i=1}^n W_i$ & $W_{avg} = \frac{1}{n}W_{all}$ \\
+		\cline{1-8}
+		Wartezeit & 18 & 24 & 17 & 6 & 24 & 89 & 17,8\\
+		\cline{1-8}
+	\end{tabularx}
 	\section{Synchronisation und Kommunikation}
 	\subsection{Grundlegendes zur Synchronisation}
 	\subsubsection{Nebenläufigkeit, atomare Aktionen und Race Conditions}
 	\paragraph{Nebenläufigkeit} parallele bzw. quasi-parallele Ausführung von Befehlen auf einer oder mehreren CPUs. Prozesse bzw. Threads werden in Multiprogramming-Systemen nebenläufig ausgeführt - Programmierer kann die Ablaufreihenfolge nicht beeinflussen
+	\paragraph{Race Condition} Zwei oder mehrere Prozesse/Threads benutzen ein gemeinsames Betriebsmittel. Das Endergebnis ist von der zeitlichen Reihenfolge abhängig $\rightarrow$ Inkonsistenzen
 	\paragraph{Atomare Aktion} Codebereiche des Betriebssystem (oder Anwendung), die in einem Stück ausgeführt werden müssen und nicht unterbrochen werden dürfen. Prozesse, die atomare Aktionen durchführen müssen exklusiv Betriebsmittel zugeteilt werden und dürfen dem Prozess nicht entzogen werden - Unterbrechung durch eine Scheduling-Entscheidung des Betriebssystem jederzeit möglich
 	\paragraph{Beispiel} verkettete Listen werden vom Betriebssystem verwaltet $\rightarrow$ von mehreren Prozessen zugreifbar - Operation besteht aus zwei Kommandos - Prozess möchte ein neues Objekt an die Liste hängen, genau wie ein anderer Proess und wird unterbrochen - Prozess B, welcher die selben Variablen wir Prozess  A verwendet, könnte ein Problem verursachen
 	\paragraph{Lost-Update-Problem} Inkonsistenzen bei gemeinsam genutztem Zähler, der von zwei Prozessen verändert wird
@@ -307,9 +336,9 @@ headsep=2mm]{geometry}
 	\subsection{Synchronisationskonzepte}
 	\subsubsection{Sperren}
 	Eine einfache Lösung zur Realisierung von kritischen Abschnitten ist busy waiting (aktives Warten). Ein Prozess testet eine sog. Synchronisationsvariable solange, bis die Variable einen Wert hat, der den Zutritt erlaubt. Dieses Polling ist oft unwirtschaftlich, da es eine Verschwendung der CPU-Zeit bedeutet, aber: Spinlocks in Betriebssystemen sind oft anzutreffen (bei sehr kurzen Wartezeiten bei Multiprozessoren gut). Meist ist es besser, einen Prozess 'schlafen' zu legen und erst wieder wecken, wenn er in den kritischen Abschnitt darf.
-	\paragraph{Hardwareunterstützung durch Maschinenbefehle} Problem: Zwei CPUs führen einen \textit{TSL-Befehl} (Test and Set Lock) aus und die Teiloperationen überlappen sich. Ausführung eines TSL-Befehls in einem Speicherzyklus erledigt $\rightarrow$ funktioniert bei Multiprocessing
+	\paragraph{Hardwareunterstützung durch Maschinenbefehle} Problem: Zwei CPUs führen einen \textit{TSL-Befehl} (Test and Set Lock) aus und die Teiloperationen überlappen sich. Ausführung eines TSL-Befehls in einem Speicherzyklus erledigt $\rightarrow$ funktioniert bei Multiprocessing. Operanden des TSL $\rightarrow$ TSL R1, LOCK $\rightarrow$ LOCK in R1 einlesen und LOCK auf 1 setzen
 	\subsubsection{Semaphore}
-	Dijkstra (1965) führte das Konzept der Semaphore zur Lösung des Mutual Exclusion Problems ein. Zwei elementare Operationen:
+	Dijkstra (1965) führte das Konzept der Semaphore zur Lösung des Mutual Exclusion Problems ein. Semaphore selber müssen unterbrechbar sein, da ein Unterbrechen dieser Operationen zu Inkonsistenzen führen kann. Zwei elementare Operationen:
 	\paragraph{P()} P-Operation, auch \textbf{Down}-Operation genannt. Aufruf bei Eintritt in den kritischen Abschnitt, Operation auf Semaphor. Aufrufender Prozess wird in den Wartezustand versetzt, wenn sich ein anderer Prozess im kritischen Abschnitt befindet $\rightarrow$ Warteschlange
 	\paragraph{V()} V-Operation, auch \textbf{Up}-Operation genannt. Aufruf bei Verlassen des kritischen Abschnitts, evtl. wird einer der wartenden Prozesse aktiviert und darf den kritischen Abschnitt betreten\\\\
 	Nutzung des Semaphors könnte so aussehen:\\
@@ -340,6 +369,7 @@ headsep=2mm]{geometry}
 	\subsubsection{C\# Monitore}
 	\includegraphics[width=0.65\columnwidth]{monitor_csharp}
 	\subsection{Behandlung von Deadlocks}
+	Allgemein gilt, Deadlocks sind unmöglich falls $r = 1 + (p \cdot (m-1))$ wobei $p =$ Prozesse, $r = $ Ressourcen und $m =$ maximal benötigte Ressourcen pro Prozess ist
 	\subsubsection{Ignorieren}
 	Nur sinnvoll, wenn Deadlocks selten auftreten oder Kosten der Vermeidung sehr hoch sind. Unakzeptabel in Echtzeitsystemen oder Kosten eines Deadlocks sehr hoch sind
 	\subsubsection{Erkennen und beheben}
@@ -419,6 +449,7 @@ headsep=2mm]{geometry}
 	\paragraph{Memory Management Unit (MMU)} CPU sendet virtuelle Adressen an die MMU, welche daraus die reale Adresse ermittelt und sie an den Hauptspeicher weiterleitet
 	\paragraph{Adressumsetzung} Virtuelle Adresse ist in virtueller \textit{Seitennummer} und einem \textit{Offset} geteilt - virtuelle Seitennummer ist ein Index auf die \textit{Seitentabelle} - im Eintrag steht die Rahmen-Nummer, falls die Seite einem Rahmen zugeordnet ist. Befindet sich eine angesprochene Adresse nicht im Hauptspeicher $\rightarrow$ MMU verursacht bei der MMU einen \textbf{Trap} - Beispiel: \texttt{MOVE R1, 8196} $\rightarrow$ Adresse befindet sich in Page 2 des virtuellen Adressraumes $\rightarrow$ MMU transformiert 8196 $\rightarrow$ 4\\\\
 	Mapping muss schnell sein - in großen Adressräumen sind sehr große Seitentabellen möglich (32 Bit Adressraum $\rightarrow$ 1 Mio. Einträge, Seitengröße von 4 KiB)(Bei 4 Byte pro Eintrag $\rightarrow$ 4MiB Hauptspeicher notwendig)
+	\paragraph{Page Fault (Seitenfehler)} Wenn eine benötigte Seite nicht im realen Speicher liegt, wird von der \textit{MMU} ein Interrupt der sogenannte Page Fault erzeugt, der dafür sorgt das die benötigte Seite in den Hauptspeicher geladen wird.
 	\subsection{Optimierung der virtuellen Speichertechnik}
 	\paragraph{Virtuelle Adressierung aufwändig, da...} viele, umfangreiche Tabellen benötigt werden - Teil der Festplatte wird als Paging-Area verwendet - laufend muss untersucht werden, ob Seiten im Hauptspeicher bleiben oder auf die Festplatte auszulagern sind
 	\paragraph{Optimierung durch Adressumsetzpuffer...} größere Seiten (64-Bit-Prozessoren)
