@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  5 JUL 2018 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  10 JUL 2018 09:33
 entering extended mode
 **./BS_Zusammenfassung.tex
 (BS_Zusammenfassung.tex
@@ -1147,51 +1147,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
-[7]
-<link.png, id=47, 566.86781pt x 270.25969pt>
-File: link.png Graphic file (type png)
-<use link.png>
-Package pdftex.def Info: link.png  used on input line 501. on input line 501.
-Package pdftex.def Info: Requested size: 211.66711pt x 100.91412pt on input lin
-e 501.
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--505
+Underfull \hbox (badness 10000) in paragraph at lines 468--484
+[]  \T1/lmr/bx/n/8 Not-Re-cent-ly-Used (NRU) \T1/lmr/m/n/8 Seiten, die \T1/lmr/
+bx/n/8 in let-zter Zeit
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 468--484
+\T1/lmr/bx/n/8 nicht genutzt wur-den\T1/lmr/m/n/8 , sind Kan-di-daten für Ver-d
+rän-gung.
+ []
+
+
+Underfull \hbox (badness 6157) in paragraph at lines 468--484
+\T1/lmr/m/n/8 sind besser gestellt. Ent-fer-nung nach fol-gen-der Rei-hen-folge
 
  []
 
-<konsistenz.png, id=48, 587.19376pt x 264.23718pt>
+<aging.png, id=43, 350.81062pt x 88.83188pt>
+File: aging.png Graphic file (type png)
+<use aging.png>
+Package pdftex.def Info: aging.png  used on input line 490. on input line 490.
+Package pdftex.def Info: Requested size: 277.81284pt x 70.35262pt on input line
+ 490.
+
+Overfull \hbox (13.22995pt too wide) in paragraph at lines 489--491
+[] 
+ []
+
+<workingSet.png, id=44, 349.305pt x 98.61844pt>
+File: workingSet.png Graphic file (type png)
+<use workingSet.png>
+Package pdftex.def Info: workingSet.png  used on input line 493. on input line 
+493.
+Package pdftex.def Info: Requested size: 264.58289pt x 74.70248pt on input line
+ 493.
+[7 <./aging.png>]
+<link.png, id=49, 566.86781pt x 270.25969pt>
+File: link.png Graphic file (type png)
+<use link.png>
+Package pdftex.def Info: link.png  used on input line 538. on input line 538.
+Package pdftex.def Info: Requested size: 211.66711pt x 100.91412pt on input lin
+e 538.
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--542
+
+ []
+
+<konsistenz.png, id=50, 587.19376pt x 264.23718pt>
 File: konsistenz.png Graphic file (type png)
 <use konsistenz.png>
-Package pdftex.def Info: konsistenz.png  used on input line 512. on input line 
-512.
+Package pdftex.def Info: konsistenz.png  used on input line 549. on input line 
+549.
 Package pdftex.def Info: Requested size: 251.35292pt x 113.10771pt on input lin
-e 512.
-
-Underfull \hbox (badness 5203) in paragraph at lines 526--527
+e 549.
+[8 <./workingSet.png> <./link.png>]
+Underfull \hbox (badness 5203) in paragraph at lines 563--564
 []  \T1/lmr/bx/n/8 Fest-plat-ten-spe-icher de-frag-men-tieren \T1/lmr/m/n/8 Fra
 g-men-tierung nimmt
  []
 
-[8 <./link.png> <./konsistenz.png>]
-<einausgabe.png, id=52, 596.2275pt x 267.24844pt>
+[9 <./konsistenz.png>]
+<einausgabe.png, id=57, 596.2275pt x 267.24844pt>
 File: einausgabe.png Graphic file (type png)
 <use einausgabe.png>
-Package pdftex.def Info: einausgabe.png  used on input line 565. on input line 
-565.
+Package pdftex.def Info: einausgabe.png  used on input line 602. on input line 
+602.
 Package pdftex.def Info: Requested size: 251.35292pt x 112.66359pt on input lin
-e 565.
- [9 <./einausgabe.png>] [10]
+e 602.
+ [10 <./einausgabe.png>]
 
 AED: lastpage setting LastPage
 (BS_Zusammenfassung.aux) ) 
 Here is how much of TeX's memory you used:
- 3682 strings out of 493312
- 51180 string characters out of 3138899
+ 3693 strings out of 493312
+ 51346 string characters out of 3138899
  136833 words of memory out of 3000000
- 7132 multiletter control sequences out of 15000+200000
+ 7141 multiletter control sequences out of 15000+200000
  41853 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,43p,670b,1316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,926b,1357s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm
 .enc}{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{D:/Program 
 Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{D:/Program Files/MiKTeX 2.9/
@@ -1205,9 +1241,9 @@ es/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 ri8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><D:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on BS_Zusammenfassung.pdf (10 pages, 1393164 bytes).
+Output written on BS_Zusammenfassung.pdf (10 pages, 1416043 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

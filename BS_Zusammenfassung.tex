@@ -442,13 +442,16 @@ headsep=2mm]{geometry}
 	Speichergröße eines Programms darf den vorhandenen physikalischen Hauptspeicher überschreiten - Prozess kann ablaufen, wenn er nur teilweise im Hauptspeicher ist - Programmierer soll sich am besten nur mit einem linearen Adressraum befassen - Betriebssystem hält die gerade benutzten Teile im Hauptspeicher und den Rest auf der Festplatte
 	\paragraph{Virtueller Adressraum} Wird vom Prozess gesehen, ist in \textit{Seiten} aufgeteilt
 	\paragraph{Realer Adrssraum} RAM, normalerweise kleiner als virtueller Adressraum, ist in \textit{Seitenrahmen} aufgeteilt
-	\paragraph{Seite} Teile eines virtuellen Adressraums. Mehrere Speicherseiten bilden Speicherabbild eines Prozesses - nur die benötigten Speicherseiten müssen im Arbeitsspeicher geladen sein, während der Prozess läuft - Größe meist gering, Anzahl beliebig groß
+	\paragraph{Seite} Teile eines virtuellen Adressraums. Mehrere Speicherseiten bilden Speicherabbild eines Prozesses - nur die benötigten Speicherseiten müssen im Arbeitsspeicher geladen sein, während der Prozess läuft - Größe meist gering, Anzahl beliebig groß. Kleine Seitengröße $\rightarrow$ mehr Seitenfehler, Seitentabelle wird größer
 	\paragraph{Seitenrahmen} Teile eines realen Adressraums. \textit{Seiten} und \textit{Seitenrahmen} müssen zwingend die gleiche Größe haben
 	\subsubsection{Strategien zur Verwaltung von virtuellem Speicher}
 	\paragraph{Paging} Umlagerung zwischen Hauptspeicher und Festplatte. Jeder Prozess darf alle Adressen verwenden, welche die HW-Architektur des Rechners vorgibt - bei Systemen mit 32-Bit-Adressen kann jeder Prozess einen Adressraum von 4GiB verwenden
 	\paragraph{Memory Management Unit (MMU)} CPU sendet virtuelle Adressen an die MMU, welche daraus die reale Adresse ermittelt und sie an den Hauptspeicher weiterleitet
-	\paragraph{Adressumsetzung} Virtuelle Adresse ist in virtueller \textit{Seitennummer} und einem \textit{Offset} geteilt - virtuelle Seitennummer ist ein Index auf die \textit{Seitentabelle} - im Eintrag steht die Rahmen-Nummer, falls die Seite einem Rahmen zugeordnet ist. Befindet sich eine angesprochene Adresse nicht im Hauptspeicher $\rightarrow$ MMU verursacht bei der MMU einen \textbf{Trap} - Beispiel: \texttt{MOVE R1, 8196} $\rightarrow$ Adresse befindet sich in Page 2 des virtuellen Adressraumes $\rightarrow$ MMU transformiert 8196 $\rightarrow$ 4\\\\
+	\paragraph{Adressumsetzung} Virtuelle Adresse ist in virtueller \textit{Seitennummer} und einem \textit{Offset} geteilt - virtuelle Seitennummer ist ein Index auf die \textit{Seitentabelle} - im Eintrag steht die Rahmen-Nummer, falls die Seite einem Rahmen zugeordnet ist. Befindet sich eine angesprochene Adresse nicht im Hauptspeicher $\rightarrow$ MMU verursacht bei der MMU einen \textbf{Trap}\\ \textbf{Berechnung}: Teile \textbf{Virtuelle Adresse} durch \textbf{Seitengröße} $\rightarrow$ \textbf{Ganzzahliger Anteil} gibt die Zeile im virtuellen Adressraum an. Diese Zeile gibt den Rahmen im realen Adressraum an. An den dort angegeben wert muss der \textbf{Offset} (Rest der Divisionsoperation) addiert werden $\rightarrow$ physische Adresse\\\\
 	Mapping muss schnell sein - in großen Adressräumen sind sehr große Seitentabellen möglich (32 Bit Adressraum $\rightarrow$ 1 Mio. Einträge, Seitengröße von 4 KiB)(Bei 4 Byte pro Eintrag $\rightarrow$ 4MiB Hauptspeicher notwendig)
+	\paragraph{Mehrstufige Adressumsetzung} Spart Speicherplatz da Seitentabellen nicht komplett im Speicher gehalten werden müssen. Virtuelle Adresse enthält Index Bits für jede Stufe der Seitentabelle. Beispiel: 32 Bit Virtuelle Adresse, zwei Stufig mit je 1024 Plätzen $\rightarrow$ 10 Bit für Index 1, 10 Bit für Index 2 und 12 Bit für Offset\\
+	\textbf{Berechnung} der Seiten im Adressraum: 2\^{}(Summe \textbf{aller} Indexbits der virtuellen Adresse). Beispiel oben wäre 2\^{}20 = 1.048.576
+	\paragraph{Seitentabelle} Jeder Prozess hat seine eigene Seitentabelle. Der Virtuelle Adressraum zeigt auf einen Index in der Seitentabelle. Über den Index findet man die Position des gewünschten Seitenrahmen
 	\paragraph{Page Fault (Seitenfehler)} Wenn eine benötigte Seite nicht im realen Speicher liegt, wird von der \textit{MMU} ein Interrupt der sogenannte Page Fault erzeugt, der dafür sorgt das die benötigte Seite in den Hauptspeicher geladen wird.
 	\subsection{Optimierung der virtuellen Speichertechnik}
 	\paragraph{Virtuelle Adressierung aufwändig, da...} viele, umfangreiche Tabellen benötigt werden - Teil der Festplatte wird als Paging-Area verwendet - laufend muss untersucht werden, ob Seiten im Hauptspeicher bleiben oder auf die Festplatte auszulagern sind
@@ -457,7 +460,41 @@ headsep=2mm]{geometry}
 	\subsubsection{Optimierung durch invertierte Seitentabellen}
 	angelegte Tabelle, in der man reale Adressen auf virtuelle abbildet - ein Eintrag pro Frame in einer invertierten Seitentabelle - \textbf{Vorteil}: weniger Tabelleneinträge $\rightarrow$ nur noch so viele wie Seitenrahmen im Hauptspeicher zu Verfügung stehen - \textbf{Nachteil}: In der Seitentabelle ist keine Ordnung nach virtuellen Adressen $\rightarrow$ Suche aufwändiger
 	\paragraph{Virtuelle Speichertechnik} \textbf{Vorteile}: Prozesse müssen nicht komplett speicherresident sein - lineare Speicheradressierung - beim Prozesswechsel behält ein Prozess seine hauptspeicherresidenten Seiten - Anwendungsprogramme können vollen virtuellen Adressraum nutzen
-	
+	\subsection{Seitenersetzung und Verdrängung}
+	\subsubsection{Belady} Es werden die Seiten zur Verdrängung ausgewählt, die \textbf{am spätesten in der Zukunft} benutzt werden $\rightarrow$ zukünftige Seitenzugriffe müssen bekannt sein $\rightarrow$ \textbf{kaum realisierbar, aber sinnvoll als Referenz}
+	\subsubsection{Seitenersetzungsalgorithmen}
+	\paragraph{Demand-Paging} Ersetzung einer Seite nur bei Page Fault
+	\paragraph{First-In, First-Out (FIFO)} Die älteste Seite wird ersetzt, leicht zu implementieren. \textbf{Nachteil}: Möglicherweise werden wichtige Seiten entfernt
+	\paragraph{Not-Recently-Used (NRU)} Seiten, die \textbf{in letzter Zeit nicht genutzt wurden}, sind Kandidaten für Verdrängung. Seiten haben \textbf{R/M-Bits} (read, modiefied). Modifizierte Seiten sind besser gestellt. Entfernung nach folgender Reihenfolge
+	\begin{tabularx}{\columnwidth}{|l|l|l|X|}
+		\cline{1-4}
+		\multicolumn{4}{|c|}{4 Klassen "Opfersuche" in dieser Reihenfolge} \\
+		\cline{1-4}
+		Nr & R-Bit & M-Bit & Beschreibung\\
+		\cline{1-4}
+		1 & 0 & 0 & Seiten werden als erstes ausgelagert \\
+		\cline{1-4}
+		2 & 0 & 1 & Verändert im vorhergehenden Intervall \\
+		\cline{1-4}
+		3 & 1 & 0 & Nur lesender Zugriff im aktuellen Intervall \\
+		\cline{1-4}
+		4 & 1 & 1 & Seiten werden als letztes ausgelagert \\
+		\cline{1-4}
+	\end{tabularx}
+	\paragraph{Second Chance} Ist eine Verbesserung von \textbf{FIFO}. Nutzt zusätzlich das \textbf{R-Bit} $\rightarrow$ Aging. Ist die älteste Seite schon benutzt, wird sie nicht ausgelagert, sondern an das Ende der Liste gehängt und das \textbf{R-Bit} gelöscht (auf 0 gesetzt). Wurden alle Seiten in einem Intervall referenziert $\rightarrow$ wie FIFO-Algorithmus
+	\paragraph{Clock-Page} Verbesserung von \textit{Second Chance}. Statt \textit{FIFO} eine \textbf{zyklisch verkettete Liste} (wie eine Uhr). "Uhrzeiger" verweist auf Kandidaten und wandert durch die Liste. Falls \textbf{R = 1 $\rightarrow$ R = 0} setzen und weiter schalten bis eine Seite mit \textbf{R = 0} gefunden ist
+	\paragraph{Least Recently Used (LRU)} Ersetzt die Seiten die Zeitlich am weitesten zurück liegen. Liefert gute Ergebnisse, aber \textbf{aufwändig}. \textbf{Zeitmessung} notwendig
+	\paragraph{Not Frequently Used (NFU)} Gute Annäherung an \textit{LRU}. Ersetzt Seiten, die in \textbf{einem Zeitintervall selten genutzt} wurden. Seitentabelle erhält einen Eintrag mit \textbf{Zugriffszähler} (initialisiert mit 0). Bei Benutzung wird \textbf{Zähler} um 1 erhöht. Bei \textit{Page Fault} $\rightarrow$ Ersetze Seite mit \textbf{kleinstem Zähler}. Problem ist, alte, häufig zugegriffene Seiten die nicht mehr verwendet werden, werden nicht ausgelagert $\rightarrow$ Alterung berücksichtigen, \textbf{Aging}
+	\paragraph{Aging Algorithmen (1)} NxN \textbf{Bitmap}. Bei Zugriff auf Seite k $\rightarrow$ 1. Setze alle Bits in \textbf{Zeile k} auf 1\\ 2. Setze alle Bits in \textbf{Spalte k} auf 0
+	\paragraph{Aging Algorithmen (2)} Ein \textbf{Zähler pro Seite}. Periodisch in festen Zeitintervallen werden alle Zähler um \textbf{ein Bit nach rechts geschiftet} und \textbf{R-Bit} zum linken (höchstwärtigen) Bit addieren\\
+	\includegraphics[width=1.05\columnwidth]{aging}
+	\paragraph{Working Set} Aktuell benötigte Seitenmenge = \textbf{Working Set}. Ändert sich nur "langsam", in nächster Zukunft benötigte Seiten mit hoher Wahrscheinlichkeit in der nähe des gerade adressierten. Halten dieser Menge im Hauptspeicher $\rightarrow$ keine \textit{Page Faults}. Bei \textit{Working Set} ist ein \textbf{Prepaging möglich} $\rightarrow$ noch nicht angeforderte Seiten werden vorsorglich in den Hauptspeicher geladen\\
+	\textbf{Working Set} bestimmen in dem man die letzten \textit{d} Referenzen anschaut. \textbf{Beispiel}: \textit{d} = 10\\
+	\includegraphics[width=1\columnwidth]{workingSet}
+	\paragraph{Working Set Algorithmus} basiert auf dem Lokalitätsprinzip. \textbf{Annahmen}: R-Bit wird vom BS periodisch zurückgesetzt. R- und M-Bit durch die HW gesetzt. Seitentabelleneintrag mit Feld für \textbf{Zeitpunkt des letzten Zugriffs} und $\tau$ = Zeitintervall für Working Set\\ Bei einem \textit{Page Fault} $\rightarrow$ Seitentabelle durchsuchen (wird immer komplett durchlaufen, um Zugriffszeitpunkte zu aktualisieren). Falls \textbf{R=1}: Seite im Working Set $\rightarrow$ \textbf{Zugriffszeitpunkt auf aktuelle Zeit setzen}\\ Falls \textbf{R=0}: \textbf{Alter} der Seite $> \tau$ $\rightarrow$ Seite gehört nicht zum Working Set, also ersetzen\\ \textbf{Alter} $\leq \tau$ Älteste Seite merken. \textbf{Am Ende}: Älteste Seite ersetzen (mind. einmal war R=0 aber immer Alter $\leq \tau$) oder irgendeine, möglichst unveränderte Seite ersetzen (alle R=1)
+	\paragraph{WSClock Algorithmus} Effizientere Implementierung, zyklisch verkettete Liste\\
+	Bei \textit{Page Fault} starte bei Seite auf die der "Uhrzeiger" zeigt. Falls \textbf{R=1}, Seite wird benutzt $\rightarrow$ kein guter Kandidat, also setze R=0 und rücke zur nächsten Seite vor \\
+	Falls \textbf{R=0} und \textbf{Alter $>\tau$} und \textbf{M=0} $\rightarrow$ Seite nicht überschreiben, Falls \textbf{R=0} und \textbf{Alter $>\tau$} und \textbf{M=1} Seite auf Festplatte schreiben und Zeiger vorrücken.
 	\subsection{Speicherbelegung und Vergabe}
 	\subsubsection{Speicherbelegungsstrategien}
 	\paragraph{Speicherbelegungstabellen} Verwaltet die Belegung des Hauptspeichers
@@ -489,7 +526,7 @@ headsep=2mm]{geometry}
 	\paragraph{Superblock} Enthält Verwaltungsinformationen zum Dateisystem
 	\paragraph{Free Blocks} Gibt die freien Blöcke des Dateisystems an
 	\paragraph{Rootverzeichnis} Enthält den Inhalt des Dateisystems
-	\paragraph{I-Nodes} Einträge im Inhaltsverzeichnis des Dateisystems
+	\paragraph{I-Nodes} sind Einträge im Inhaltsverzeichnis des Dateisystems
 	\subsubsection{Implementierung von Dateien}
 	Belegung durch verkettete Liste $\rightarrow$ Sequentieller Zugriff unkompliziert $\rightarrow$ Wahlfreier Zugriff extrem langsam. Verkettete Liste mit Tabelle im Arbeitsspeicher $\rightarrow$ \textit{File Allocation Table} (FAT)
 	\subsubsection{File Allocation Table (FAT)}
