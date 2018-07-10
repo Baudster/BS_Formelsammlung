@@ -527,6 +527,9 @@ headsep=2mm]{geometry}
 	\paragraph{Free Blocks} Gibt die freien Blöcke des Dateisystems an
 	\paragraph{Rootverzeichnis} Enthält den Inhalt des Dateisystems
 	\paragraph{I-Nodes} sind Einträge im Inhaltsverzeichnis des Dateisystems
+	\paragraph{Beispiel Berechnung I-Node} I-Nodes kann man sich als Bäume vorstellen, wobei der Start I-Node die Wurzel ist. Dieser hat dann $n$ Blätter mit Daten sowie $k$ Knoten die auf weitere I-Nodes verweisen. Sind dies einstufige I-Nodes haben diese Knoten jeweils wieder $n$ Blätter, waren es aber zwei Stufige I-Nodes enthalten sie nur $k$ Knoten usw. Anzahl der Blöcke für 1, 2, 3, etc stufige I-Nodes $\rightarrow$ Blockgröße geteilt durch Block-Adresse
+	\paragraph{Interne Fragmentierung} ist der "\textit{verschnitt}" der dabei entsteht das in einem Datenblock immer nur eine Datei sein kann. Wenn die Datei kleiner als der Datenblock bleibt ein teil des Blocks ungenutzt $\rightarrow$ Blockgröße - Datei = interne Fragmentierung
+	\paragraph{Externe Fragmentierung} ist, wenn die Dateien über verschiedene, nicht angrenzende, Blöcke verteilt ist
 	\subsubsection{Implementierung von Dateien}
 	Belegung durch verkettete Liste $\rightarrow$ Sequentieller Zugriff unkompliziert $\rightarrow$ Wahlfreier Zugriff extrem langsam. Verkettete Liste mit Tabelle im Arbeitsspeicher $\rightarrow$ \textit{File Allocation Table} (FAT)
 	\subsubsection{File Allocation Table (FAT)}

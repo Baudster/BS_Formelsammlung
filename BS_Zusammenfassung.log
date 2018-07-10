@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  10 JUL 2018 09:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.6.24)  10 JUL 2018 09:49
 entering extended mode
 **./BS_Zusammenfassung.tex
 (BS_Zusammenfassung.tex
@@ -1187,23 +1187,23 @@ Package pdftex.def Info: Requested size: 264.58289pt x 74.70248pt on input line
 <link.png, id=49, 566.86781pt x 270.25969pt>
 File: link.png Graphic file (type png)
 <use link.png>
-Package pdftex.def Info: link.png  used on input line 538. on input line 538.
+Package pdftex.def Info: link.png  used on input line 541. on input line 541.
 Package pdftex.def Info: Requested size: 211.66711pt x 100.91412pt on input lin
-e 538.
+e 541.
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
 
  []
 
 <konsistenz.png, id=50, 587.19376pt x 264.23718pt>
 File: konsistenz.png Graphic file (type png)
 <use konsistenz.png>
-Package pdftex.def Info: konsistenz.png  used on input line 549. on input line 
-549.
+Package pdftex.def Info: konsistenz.png  used on input line 552. on input line 
+552.
 Package pdftex.def Info: Requested size: 251.35292pt x 113.10771pt on input lin
-e 549.
+e 552.
 [8 <./workingSet.png> <./link.png>]
-Underfull \hbox (badness 5203) in paragraph at lines 563--564
+Underfull \hbox (badness 5203) in paragraph at lines 566--567
 []  \T1/lmr/bx/n/8 Fest-plat-ten-spe-icher de-frag-men-tieren \T1/lmr/m/n/8 Fra
 g-men-tierung nimmt
  []
@@ -1212,10 +1212,10 @@ g-men-tierung nimmt
 <einausgabe.png, id=57, 596.2275pt x 267.24844pt>
 File: einausgabe.png Graphic file (type png)
 <use einausgabe.png>
-Package pdftex.def Info: einausgabe.png  used on input line 602. on input line 
-602.
+Package pdftex.def Info: einausgabe.png  used on input line 605. on input line 
+605.
 Package pdftex.def Info: Requested size: 251.35292pt x 112.66359pt on input lin
-e 602.
+e 605.
  [10 <./einausgabe.png>]
 
 AED: lastpage setting LastPage
@@ -1227,7 +1227,7 @@ Here is how much of TeX's memory you used:
  7141 multiletter control sequences out of 15000+200000
  41853 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,43p,926b,1357s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,43p,926b,1363s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm
 .enc}{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{D:/Program 
 Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{D:/Program Files/MiKTeX 2.9/
@@ -1241,7 +1241,7 @@ es/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmr8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 ri8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><D:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on BS_Zusammenfassung.pdf (10 pages, 1416043 bytes).
+Output written on BS_Zusammenfassung.pdf (10 pages, 1417287 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
